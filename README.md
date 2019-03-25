@@ -37,18 +37,6 @@
 - belongs_to :user
 - belongs_to :group
 
-## photo_messagesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|image|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false,foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :group
-
 ## membersテーブル
 
 |Column|Type|Options|
