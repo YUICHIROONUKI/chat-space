@@ -22,14 +22,25 @@
 - has_many :messages
 - has_many :users, through: :members
 
-## messagesテーブル
+## text_messagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: false|
-|image|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+## photo_messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false,foreign_key: true|
 
 ### Association
 - belongs_to :user
