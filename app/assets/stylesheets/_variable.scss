@@ -1,0 +1,155 @@
+
+html, body{
+	width: 100%;
+	height: 100%;
+}
+* {
+	box-sizing: border-box;
+}
+
+.left-contents{
+	width: 300px;
+	float: left;
+	font-weight: bold;
+	color: $white;
+	&__user {
+		background-color: #253141;
+		height: 100px;
+		padding: 0 20px;
+		display: flex;
+        align-items: center;
+		&__box {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            &__name {
+                 font-size: 16px;
+            }
+            &__icon {
+                 cursor: pointer;
+                 &.fa {
+                 	color: $white;
+                 	text-decoration: none;
+                 }
+            }
+		}
+	}
+	&__group {
+		padding: 20px 20px 0;
+		background-color: #2f3e51;
+		height: calc(100vh - 100px);
+		&__name {
+			font-size: 15px;
+		}
+		&__comment {
+			font-size: 11px;
+			margin: 5px 0 40px;
+		}
+	}
+}
+
+.right-contents {
+	width: calc(100vw - 300px);
+	float: left;
+	&__group {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 40px;
+		height: 100px;
+		border-bottom: 1px solid #eeeeee;
+		&__left {
+			padding-top: 35px;
+			&__name {
+				color: #333333;
+				font-size: 20px;
+				margin-bottom: 15px;
+			}
+			&__member {
+				font-size: 12px;
+				color: $light-gray;
+			}
+		}
+		&__edit {
+			color: #38AEF0;
+			line-height: 40px;
+			height: 40px;
+			padding: 0 20px;
+			border: 1px solid #38AEF0;
+			margin-top: 28px;
+			text-decoration: none;
+		}
+	}
+	&__chat {
+		height: calc(100vh - 190px);
+		padding: 46px 40px ;
+		background-color: #fafafa;
+		&__user {
+			&__name {
+				color: $light-black;
+				font-size: 16px;
+				font-weight: bold;
+				float: left;
+				padding-bottom: 10px;
+			}
+			&__date {
+				float: left;
+				font-size: 12px;
+				color: $light-gray;
+				margin-left: 10px;
+			}
+			&__comment {
+				clear: both;
+				color: $light-black;
+				font-size: 14px;
+				margin-bottom: 40px;
+			}
+		}
+	}
+	&__write {
+		height: 90px;
+		padding: 20px 40px;
+		background-color: gray;
+		&__form {
+			display: flex;
+			&__box {
+				position: relative;
+				width: 100%;
+				&__message {
+					color: $light-black;
+					font-size: 16px;
+					padding: 0 40px 0 10px;
+					height: 50px;
+					width: 100%;
+					line-height: 50px;
+					border: none;
+				}
+				&__label {
+					position: absolute;
+					cursor: pointer;
+					top: 15px;
+					right: 10px;
+					&__icon {
+						color: black;
+					}
+					&__file {
+						display: none;
+					}
+            }
+			}
+			&__send {
+				height: 50px;
+				width: 100px;
+				background-color: #38AEF0;
+				padding: 0 30px;
+				margin-left: 15px;
+				color: #FFF;
+				cursor: pointer;
+				border: none;
+			}
+		}
+	}
+}
+
+
+
+

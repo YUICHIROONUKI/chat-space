@@ -1,0 +1,57 @@
+
+
+.left-contents
+  .left-contents__user
+    .left-contents__user__box
+      .left-contents__user__box__name
+        ユーザー名
+      .left-contents__user__box__icon
+        %a.left-contents__user__box__icon.fa.fa-edit{href: "#"}
+        %a.left-contents__user__box__icon.fa.fa-cog{href: "#"}
+
+  .left-contents__group
+    .left-contents__group__name
+      グループ名
+    .left-contents__group__comment
+      コメント
+    .left-contents__group__name
+      グループ名
+    .left-contents__group__comment
+      コメント
+
+
+.right-contents
+  .right-contents__group
+    .right-contents__group__left
+      .right-contents__group__left__name
+        グループ名
+      .right-contents__group__left__member
+        メンバー
+    %a.right-contents__group__edit{href: "#"}
+      Edit
+
+  .right-contents__chat
+    .right-contents__chat__user
+      .right-contents__chat__user__name
+        ユーザー名
+      .right-contents__chat__user__date
+        日にち
+      .right-contents__chat__user__comment
+        コメント
+      .right-contents__chat__user__name
+        ユーザー名
+      .right-contents__chat__user__date
+        日にち
+      .right-contents__chat__user__comment
+        コメント
+
+  .right-contents__write
+    %form.right-contents__write__form
+      .right-contents__write__form__box
+        %input.right-contents__write__form__box__message{type: "text", name: "message", placeholder: "type a message"}
+        %label.right-contents__write__form__box__label
+          %a.right-contents__write__form__box__label__icon.fa.fa-image{href: "#"}
+          %input.right-contents__write__form__box__label__file{type: "file", name: "datafile"}
+      %input.right-contents__write__form__send{type: "submit", value: "SEND"}
+
+
