@@ -6,8 +6,10 @@
       .left-contents__user__box__name
         ユーザー名
       .left-contents__user__box__icon
-        %a.left-contents__user__box__icon.fa.fa-edit{href: "#"}
-        %a.left-contents__user__box__icon.fa.fa-cog{href: "#"}
+        = link_to  "#", class: "left-contents__user__box__edit-icon" do
+          %i.fa.fa-edit
+        = link_to  "#", class: "left-contents__user__box__cog-icon" do
+          %i.fa.fa-cog
 
   .left-contents__group
     .left-contents__group__name
@@ -27,7 +29,7 @@
         グループ名
       .right-contents__group__left__member
         メンバー
-    %a.right-contents__group__edit{href: "#"}
+    = link_to "#", class: "right-contents__group__edit" do
       Edit
 
   .right-contents__chat
@@ -50,8 +52,7 @@
       .right-contents__write__form__box
         %input.right-contents__write__form__box__message{type: "text", name: "message", placeholder: "type a message"}
         %label.right-contents__write__form__box__label
-          %a.right-contents__write__form__box__label__icon.fa.fa-image{href: "#"}
+          .right-contents__write__form__box__label__icon.fa.fa-image{href: "#"}
           %input.right-contents__write__form__box__label__file{type: "file", name: "datafile"}
       %input.right-contents__write__form__send{type: "submit", value: "SEND"}
-
 

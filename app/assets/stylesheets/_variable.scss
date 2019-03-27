@@ -25,12 +25,15 @@ html, body{
             &__name {
                  font-size: 16px;
             }
-            &__icon {
-                 cursor: pointer;
-                 &.fa {
-                 	color: $white;
-                 	text-decoration: none;
-                 }
+            &__edit-icon {
+            	 cursor: pointer;
+                 color: $white;
+                 text-decoration: none;
+            }
+            &__cog-icon{
+            	cursor: pointer;
+            	 color: $white;
+                 text-decoration: none;
             }
 		}
 	}
