@@ -1,25 +1,6 @@
+.wrapper
 
-
-.left-contents
-  .left-contents__user
-    .left-contents__user__box
-      .left-contents__user__box__name
-        ユーザー名
-      .left-contents__user__box__icon
-        = link_to  "#", class: "left-contents__user__box__edit-icon" do
-          %i.fa.fa-edit
-        = link_to  "#", class: "left-contents__user__box__cog-icon" do
-          %i.fa.fa-cog
-
-  .left-contents__group
-    .left-contents__group__name
-      グループ名
-    .left-contents__group__comment
-      コメント
-    .left-contents__group__name
-      グループ名
-    .left-contents__group__comment
-      コメント
+  = render 'shared/side_bar'
 
 
 .right-contents
@@ -29,7 +10,7 @@
         グループ名
       .right-contents__group__left__member
         メンバー
-    = link_to "#", class: "right-contents__group__edit" do
+    = link_to edit_group_path, class: "right-contents__group__edit" do
       Edit
 
   .right-contents__chat
