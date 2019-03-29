@@ -1,0 +1,26 @@
+.wrapper
+
+  = render 'shared/side_bar'
+
+
+.right-contents
+  .right-contents__group
+    .right-contents__group__left
+      .right-contents__group__left__name
+        グループ名
+      .right-contents__group__left__member
+        メンバー
+    = link_to edit_group_path(@group), class: "right-contents__group__edit" do
+      Edit
+
+  .messages
+    = render @messages
+
+  .right-contents__write
+    .right-contents__write__form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'right-contents__write__form__box', placeholder: 'type a message' do
+          = f.label :image, class: 'right-contents__write__form__box__label' do
+            = fa_icon 'picture-o', class: 'right-contents__write__form__box__label__icon'
+            = f.file_field :image, class: 'right-contents__write__form__box__label__file'
+        = f.submit 'Send', class: 'right-contents__write__form__send'
