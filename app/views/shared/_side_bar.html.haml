@@ -1,0 +1,19 @@
+.left-contents
+  .left-contents__user
+    .left-contents__user__box
+      .left-contents__user__box__name
+        = current_user.name
+      %ul.left-contents__user__box__lists
+        %li.left-contents__user__box__lists__list
+          = link_to  new_group_path do
+            %i.fa.fa-edit
+        %li.left-contents__user__box__lists__list
+          = link_to  edit_user_path(current_user) do
+            %i.fa.fa-cog
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        .group__name
+          = group.name
+        .group__message
+          メッセージはまだありません。
