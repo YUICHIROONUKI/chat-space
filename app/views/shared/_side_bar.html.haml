@@ -6,10 +6,10 @@
       %ul.left-contents__user__box__lists
         %li.left-contents__user__box__lists__list
           = link_to  new_group_path do
-            %i.fa.fa-edit
+            = fa_icon 'cog', class: 'left-contents__user__box__lists__list__icon'
         %li.left-contents__user__box__lists__list
           = link_to  edit_user_path(current_user) do
-            %i.fa.fa-cog
+            = fa_icon 'edit', class: 'left-contents__user__box__lists__list__icon'
   .groups
     - current_user.groups.each do |group|
       .group
