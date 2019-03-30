@@ -28,9 +28,11 @@ html, body{
             &__lists {
             	display: flex;
             	&__list{
-            	 cursor: pointer;
-                 color: $white;
-                 text-decoration: none;
+            		&__icon {
+		            	 cursor: pointer;
+		                 color: $white;
+		                 text-decoration: none;
+                    }
                 }
             }
 		}
@@ -86,10 +88,12 @@ html, body{
 			text-decoration: none;
 		}
 	}
+
 	&__chat {
 		height: calc(100vh - 190px);
 		padding: 46px 40px ;
 		background-color: #fafafa;
+		overflow: scroll;
 		&__user {
 			&__name {
 				color: $light-black;
@@ -112,49 +116,41 @@ html, body{
 			}
 		}
 	}
-	&__write {
-		height: 90px;
-		padding: 20px 40px;
-		background-color: gray;
-		&__form {
-			display: flex;
-			&__box {
-				position: relative;
-				width: 100%;
-				&__message {
-					color: $light-black;
-					font-size: 16px;
-					padding: 0 40px 0 10px;
-					height: 50px;
-					width: 100%;
-					line-height: 50px;
-					border: none;
-				}
-				&__label {
-					position: absolute;
-					cursor: pointer;
-					top: 15px;
-					right: 10px;
-					&__icon {
-						color: black;
-					}
-					&__file {
-						display: none;
-					}
-            }
-			}
-			&__send {
-				height: 50px;
-				width: 100px;
-				background-color: #38AEF0;
-				padding: 0 30px;
-				margin-left: 15px;
-				color: #FFF;
-				cursor: pointer;
-				border: none;
-			}
-		}
-	}
+	.form {
+	    background-color: #DDDDDD;
+	    box-sizing: border-box;
+	    height: 90px;
+	    padding: 20px 50px 20px 40px;
+	    &__message {
+		      border: none;
+		      float: left;
+		      height: 50px;
+		      width: calc(100% - 150px);
+	    }
+	    &__mask {
+		      background-color: $white;
+		      float: left;
+		      height: 50px;
+		      padding-right: 10px;
+		      &__image {
+			        font-size: 20px;
+			        line-height: 50px;
+		      }
+		      .hidden {
+		        	display: none;
+		      }
+	    }
+	    &__submit {
+		      background-color: $light_blue;
+		      border: none;
+		      color: $white;
+		      float: right;
+		      font-size: 16px;
+		      height: 50px;
+		      margin-left: 15px;
+		      padding: 0 30px;
+	    }
+    }
 }
 
 

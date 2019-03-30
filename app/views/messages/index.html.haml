@@ -13,14 +13,14 @@
     = link_to edit_group_path(@group), class: "right-contents__group__edit" do
       Edit
 
-  .messages
+  .right-contents__chat
     = render @messages
 
-  .right-contents__write
-    .right-contents__write__form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'right-contents__write__form__box', placeholder: 'type a message' do
-          = f.label :image, class: 'right-contents__write__form__box__label' do
-            = fa_icon 'picture-o', class: 'right-contents__write__form__box__label__icon'
-            = f.file_field :image, class: 'right-contents__write__form__box__label__file'
-        = f.submit 'Send', class: 'right-contents__write__form__send'
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
