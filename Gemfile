@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :test do
+  gem 'faker'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,6 +44,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
 end
 
 group :development do
