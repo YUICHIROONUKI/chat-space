@@ -6,4 +6,5 @@
   .right-contents__chat__user__comment
     - if message.content.present?
       = message.content
+  .right-contents__chat__user__image
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
