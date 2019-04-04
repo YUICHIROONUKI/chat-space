@@ -1,18 +1,21 @@
 $(document).on('turbolinks:load', function(){
 	function buildHTML(message) {
 		var html = `<div class="raight-contents__chat__user">
-		            <div class="right-contents__chat__user__name">
-                      ${message.user_name}
-                    </div>
+			            <div class="right-contents__chat__user__name">
+	                      ${message.user_name}
+	                    </div>
 
-                    <div class="right-contents__chat__user__date">
-                      ${message.created_at}
-                    </div>
+	                    <div class="right-contents__chat__user__date">
+	                      ${message.created_at}
+	                    </div>
 
-                    <div class="right-contents__chat__user__comment">
-                      ${message.content}
-                      <img src="${message.image}">
-                    </div>
+	                    <div class="right-contents__chat__user__comment">
+	                      ${message.content}
+	                    </div>
+
+	                    <div class="right-contents__chat__user__image">
+	                    <img src="${message.image}">
+                    	</div>
                     </div>`
         return html;
 	}
