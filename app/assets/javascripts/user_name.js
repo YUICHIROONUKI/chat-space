@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load',function(){
-	function buildHTML(user) {
+	function usersList(user) {
 	var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${user.user_name}</p>
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.user_id}" data-user-name="${user.user_name}">追加</div>
@@ -29,7 +29,7 @@ $(document).on('turbolinks:load',function(){
 
 			if (users.length !== 0 && input.length !== 0) {
 				users.forEach(function(user) {
-					var html = buildHTML(user);
+					var html = usersList(user);
 					var currentUserId = $('.chat-group-user').attr("id");
 			        $('#user-search-result').append(html);
 			        var appendUserId = $('.user-search-add').attr("data-user-id");
