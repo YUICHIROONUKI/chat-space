@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
+  before_action :set_members, only: [:edit]
 
     def index
     end
@@ -7,6 +8,9 @@ class GroupsController < ApplicationController
 	def new
 		@group = Group.new
 		@group.users << current_user
+	end
+
+	def edit
 	end
 
 	def create
@@ -35,5 +39,9 @@ class GroupsController < ApplicationController
 
 	def set_group
 		@group = Group.find(params[:id])
+	end
+
+	def set_members
+		@members = @group.users.reject{|user| user.name == current_user.name}
 	end
 end

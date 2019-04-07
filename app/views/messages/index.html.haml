@@ -7,9 +7,10 @@
   .right-contents__group
     .right-contents__group__left
       .right-contents__group__left__name
-        グループ名
+        = @group.name
       .right-contents__group__left__member
-        メンバー
+        - @group.users.each do |user|
+          = user.name
     = link_to edit_group_path(@group), class: "right-contents__group__edit" do
       Edit
 
