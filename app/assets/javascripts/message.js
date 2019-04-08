@@ -57,7 +57,7 @@ $(document).on('turbolinks:load', function(){
 	    .done(function(data){
 	    	var html = buildMessageHTML(data);
 	    	$('.right-contents__chat').append(html);
-	    	$('.form__message').val('');
+	    	$('form')[0].reset();
 	    	$('.form__submit').removeAttr('disabled');
 	    	$('.right-contents__chat').animate({ scrollTop: $('.right-contents__chat')[0].scrollHeight});
 	    	return false
