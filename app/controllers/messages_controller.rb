@@ -8,8 +8,8 @@ class MessagesController < ApplicationController
 	end
 
 	def create
-		@message = @group.messages.new(message_params)
-	    if @message.save
+		@message = @group.messages.create(message_params)
+	    if @message
 		  respond_to do |format|
 			format.html{ redirect_to group_messages_path(@group) }
 			format.json
@@ -25,7 +25,7 @@ class MessagesController < ApplicationController
 	private
 
 	def message_params
-		params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
+		params.require(:message).permit(:content, :image,).merge(user_id: current_user.id)
 	end
 
 	def set_group
