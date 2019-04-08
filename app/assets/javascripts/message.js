@@ -1,44 +1,44 @@
 $(document).on('turbolinks:load', function(){
 	var buildMessageHTML = function(message) {
-		if (message.content && message.image.url) {
-			var html = '<div class="right-contents__chat__user" data-id=' + message.id +'>' +
-				'<div class="right-contents__chat__user__name">' +
-				  message.user_name +
-				'</div>' +
-				'<div class="right-contents__chat__user__date">' +
-				  message.created_at +
-				'</div>' +
-				'<div class="right-contents__chat__user__comment">' +
-				  message.content +
-				'</div>' +
-				'<div class="right-contents__chat__user__image">' +
-				  '<img src="' + message.image.url +'" class="lower-message__image" >' +
-				'</div>' +
-			'</div>'
+		if (message.content || message.image.url) {
+			var html = `<div class="right-contents__chat__user" data-id="${message.id}">
+				<div class="right-contents__chat__user__name">
+				  ${message.user_name}
+				</div>
+				<div class="right-contents__chat__user__date">
+				  ${message.created_at}
+				</div>
+				<div class="right-contents__chat__user__comment">
+				  ${message.content}
+				</div>
+				<div class="right-contents__chat__user__image">
+				  <img src="${message.image.url}" class="lower-message__image" >
+				</div>
+			</div>`
 		} else if (message.content) {
-			var html = '<div class="right-contents__chat__user" data-id=' + message.id +'>' +
-				'<div class="right-contents__chat__user__name">' +
-				  message.user_name +
-				'</div>' +
-				'<div class="right-contents__chat__user__date">' +
-				  message.created_at +
-				'</div>' +
-				'<div class="right-contents__chat__user__comment">' +
-				  message.content +
-				'</div>' +
-			'</div>'
+			var html = `<div class="right-contents__chat__user" data-id="${message.id}">
+				<div class="right-contents__chat__user__name">
+				  ${message.user_name}
+				</div>
+				<div class="right-contents__chat__user__date">
+				  ${message.created_at}
+				</div>
+				<div class="right-contents__chat__user__comment">
+				  ${message.content}
+				</div>
+			</div>`
 		} else if (message.image.url) {
-			var html = '<div class="right-contents__chat__user" data-id=' + message.id +'>' +
-				'<div class="right-contents__chat__user__name">' +
-				  message.user_name +
-				'</div>' +
-				'<div class="right-contents__chat__user__date">' +
-				  message.created_at +
-				'</div>' +
-				'<div class="right-contents__chat__user__image">' +
-				  '<img src="' + message.image.url +'" class="lower-message__image" >' +
-				'</div>' +
-			'</div>'
+			var html = `<div class="right-contents__chat__user" data-id="${message.id}">
+				<div class="right-contents__chat__user__name">
+				  ${message.user_name}
+				</div>
+				<div class="right-contents__chat__user__date">
+				  ${message.created_at}
+				</div>
+				<div class="right-contents__chat__user__image">
+				  <img src="${message.image.url}" class="lower-message__image" >
+				</div>
+			</div>`
 		};
 		return html;
 	};
