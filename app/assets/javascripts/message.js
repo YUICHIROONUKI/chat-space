@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
 	var buildMessageHTML = function(message) {
-		if (message.content || message.image.url) {
+		if (message.content && message.image.url) {
 			var html = `<div class="right-contents__chat__user" data-id="${message.id}">
 				<div class="right-contents__chat__user__name">
 				  ${message.user_name}
