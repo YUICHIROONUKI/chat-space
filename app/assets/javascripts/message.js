@@ -69,26 +69,31 @@ $(document).on('turbolinks:load', function(){
   });
 
   function reloadMessages() {
-    var last_message_id = $('.right-contents__chat__user:last').data('id');
+    if ($('.right-contents')[0]) {
+      var last_message_id = $('.right-contents__chat__user:last').data('id');
+      console.log(last_message_id);
+    }else{
+      return false;
+      console.log(last_message_id);
+    };
     $.ajax({
       url: "api/messages",
       type: 'get',
-      data: {id: last_message_id},
+      data: { id: last_message_id },
       dataType: 'json'
     })
-    .done(function(messages){
-      if (messages) {
+    .always(function(messages){
+      if (messages === {}) {
+        return false;
+      }else {
         $.each(messages, function(i, message){
           var html = buildMessageHTML(message);
           $('.right-contents__chat').append(html);
+          $('.right-contents__chat').animate({ scrollTop: $('.right-contents__chat')[0].scrollHeight});
         });
-        $('.right-contents__chat').animate({ scrollTop: $('.right-contents__chat')[0].scrollHeight});
-        return false
-      }
+        return false;
+      };
     })
-    .fail(function(){
-      alert('error');
-    });
   };
   setInterval(reloadMessages, 5000);
 });
